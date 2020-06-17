@@ -15,30 +15,35 @@ export class AppComponent implements OnInit {
   constructor(
     private http: HttpClient
   ){}
-
-
+// 3hr === 10800000ms
   async ngOnInit() {
+    console.log(Date.now())
     const options = {
       extras: WORDS
     }
-    if (await !window.localStorage.getItem("news")){
+    const payload = await JSON.parse(window.localStorage.getItem("news"));
+    if (!payload || Date.now() - payload.time > 10800000){
       this.http.get('https://gnews-sc.herokuapp.com').subscribe( (data: any) => {
         this.news = data.final;
         this.final = [];
         this.news.map(item => {
           const sentiment = new Sentiment();
-          if (sentiment.analyze(item.title._text, options).score > 0) {
+          if (sentiment.analyze(item.title._text, options).score > 1) {
               this.final.push(item)
           }
         })
         this.saveFinal();
       })
     } else {
-      this.final = await JSON.parse(window.localStorage.getItem("news"))
+      this.final = payload.news;
     }
   }
 
   saveFinal() {
-      window.localStorage.setItem("news", JSON.stringify(this.final))
+    const data = {
+      news: this.final,
+      time: Date.now()
+    }
+    window.localStorage.setItem("news", JSON.stringify(data));
   }
 }
