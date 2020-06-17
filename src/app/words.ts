@@ -19,5 +19,7 @@ export const WORDS = {
     'vaccination': 2,
     'cyclone': -1,
     'techrepublic': 2,
-    'nasa': 3
+    'nasa': 3,
+    'linux': 3,
+    'microsoft': 3
 }
