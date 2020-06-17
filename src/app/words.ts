@@ -21,5 +21,9 @@ export const WORDS = {
     'techrepublic': 2,
     'nasa': 3,
     'linux': 3,
-    'microsoft': 3
+    'microsoft': 3,
+    'google': 3,
+    'app': 2,
+    'apple': 2,
+    'facebook': 1,
 }
