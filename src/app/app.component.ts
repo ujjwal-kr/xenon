@@ -17,12 +17,17 @@ export class AppComponent implements OnInit {
   ){}
 // 3hr === 10800000ms
   async ngOnInit() {
-    console.log(Date.now())
     const options = {
       extras: WORDS
     }
-    const payload = await JSON.parse(window.localStorage.getItem("news"));
-    if (!payload || Date.now() - payload.time > 10800000){
+    let payload = await JSON.parse(window.localStorage.getItem("news"));
+    if (payload) {
+      if (Date.now() - payload.time >= 3600000) {
+        window.localStorage.removeItem("news");
+        payload = null;
+      }
+    }
+    if (!payload){
       this.http.get('https://gnews-sc.herokuapp.com').subscribe( (data: any) => {
         this.news = data.final;
         this.final = [];
