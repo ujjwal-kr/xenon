@@ -1,5 +1,8 @@
 <h1>The NON negative results, when Searched for "TECHNOLOGY" - Xenon</h1>
 <br>
+<p *ngIf="time">
+    {{time}}
+</p>
 <h3 *ngIf="!final">Please wait....</h3>
 <div *ngFor="let item of final">
     {{ item.title._text }}
