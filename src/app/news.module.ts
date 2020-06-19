@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
-  {path: '', component: NewsComponent}
+  { path: '', component: NewsComponent }
 ]
 
 @NgModule({
