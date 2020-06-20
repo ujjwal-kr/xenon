@@ -8,7 +8,7 @@ import { SearchComponent } from './news/search/search.component';
 
 const routes: Routes = [
   { path: '', component: NewsComponent },
-  { path: '', component: TopicsComponent }
+  { path: 'topics', component: TopicsComponent }
 ]
 
 @NgModule({
