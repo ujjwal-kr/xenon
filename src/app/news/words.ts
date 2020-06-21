@@ -31,7 +31,8 @@ export const WORDS = {
     'tool': 2,
     'analyse': 2,
     'analyze': 2,
-    'fittness': 1.5,
+    'fittness': 3,
     'masturbation': -3,
-    'sex': -5
+    'sex': -5,
+    'beheaded': -4
 }
