@@ -7,7 +7,7 @@ import { TopicsComponent } from './news/topics/topics.component';
 import { SearchComponent } from './news/search/search.component';
 
 const routes: Routes = [
-  { path: '', component: NewsComponent },
+  { path: 'topics/:id', component: NewsComponent },
   { path: 'topics', component: TopicsComponent }
 ]
 

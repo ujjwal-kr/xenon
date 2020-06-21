@@ -26,5 +26,12 @@ export const WORDS = {
     'app': 2,
     'apple': 2,
     'facebook': 1,
-    'boycott': 2	
+    'boycott': 3,
+    'tools': 2,
+    'tool': 2,
+    'analyse': 2,
+    'analyze': 2,
+    'fittness': 1.5,
+    'masturbation': -3,
+    'sex': -5
 }
