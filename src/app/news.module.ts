@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { TopicsComponent } from './news/topics/topics.component';
 import { SearchComponent } from './news/search/search.component';
+import { NewsService } from './news/news.service';
 
 const routes: Routes = [
   { path: 'topics/:id', component: NewsComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
     CommonModule,
     HttpClientModule,
     RouterModule.forChild(routes)
-  ]
+  ],
+  providers: [NewsService]
 })
 export class NewsModule { }
