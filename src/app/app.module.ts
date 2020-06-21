@@ -3,8 +3,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { NewsModule } from './news.module';
-import { StoryModule } from './story.module';
 import { NavComponent } from './nav/nav.component';
 
 @NgModule({
@@ -15,9 +13,7 @@ import { NavComponent } from './nav/nav.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    NewsModule,
-    StoryModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
