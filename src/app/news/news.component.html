@@ -1,3 +1,11 @@
 <main>
     <div class="title">NEWS</div>
+    <div *ngIf="news">
+        <p *ngFor="let item of news">
+            {{ item.title._text }}
+            <br>
+        </p>
+        <p></p>
+    </div>
+    <div (click) = "removeItem()" class="button is-primary ">Refresh</div>
 </main>

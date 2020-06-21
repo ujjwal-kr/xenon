@@ -34,5 +34,6 @@ export const WORDS = {
     'fittness': 3,
     'masturbation': -3,
     'sex': -5,
-    'beheaded': -4
+    'beheaded': -4,
+    'beebom': 3
 }

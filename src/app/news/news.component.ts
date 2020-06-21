@@ -2,10 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { WORDS } from './words';
 import * as Sentiment from 'sentiment';
 import { NewsService } from './news.service';
-import { ActivatedRoute, ParamMap } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
+import { ActivatedRoute } from '@angular/router';
 import { News } from './news';
-import { Observable } from 'rxjs';
+
 const sentiment = new Sentiment();
 const options = {
   extras: WORDS
@@ -23,56 +22,91 @@ export class NewsComponent implements OnInit {
     private service: NewsService,
     private route: ActivatedRoute
   ) {
+  }
+
+  ngOnInit(): void {
     this.route.params.subscribe((params: any) => {
       this.param = params['id']
     });
-  }
-
-
-  ngOnInit(): void {
     this.decideScoreAndFetch()
   }
 
   decideScoreAndFetch() {
     if (this.param == 'tech') {
-      this.service.tech().subscribe((data: News[]) => {
-        return this.analyze(data, -1)
-      })
+        if(this.checkStorage(this.param) == false) {
+          this.service.tech().subscribe((data: News[]) => {
+            return this.analyze(data, -1, true)
+          })
+        } else {
+          return this.news = JSON.parse(localStorage.getItem(this.param))
+        }
     }
     if (this.param == 'ind') {
-      this.service.india().subscribe((data: News[]) => {
-        return this.analyze(data, 1)
-      })
+      if (this.checkStorage(this.param) == false) {
+        this.service.india().subscribe((data: News[]) => {
+          return this.analyze(data, 1, true)
+        })
+      } else {
+        return this.news = JSON.parse(localStorage.getItem(this.param))
+      }
     }
     if (this.param == 'sci') {
-      this.service.science().subscribe((data: News[]) => {
-        return this.analyze(data, -3)
-      })
+      if(this.checkStorage(this.param) == false) {
+        this.service.science().subscribe((data: News[]) => {
+          return this.analyze(data, -3, true)
+        })
+      } else {
+        return this.news = JSON.parse(localStorage.getItem(this.param))
+      }
     }
     if (this.param == 'heal') {
-      this.service.health().subscribe((data: News[]) => {
-        return this.analyze(data, 0)  
-      })
+      if(this.checkStorage(this.param) == false) {
+        this.service.health().subscribe((data: News[]) => {
+          return this.analyze(data, 0, true)  
+        })
+      } else {
+        return this.news = JSON.parse(localStorage.getItem(this.param))
+      }
     }
     if (this.param == 'spo') {
-      this.service.sports().subscribe((data: News[]) => {
-        return this.analyze(data, 0)
-      })
+      if(this.checkStorage(this.param) == false) {
+        this.service.sports().subscribe((data: News[]) => {
+          return this.analyze(data, 0, true)
+        })
+      } else {
+        return this.news = JSON.parse(localStorage.getItem(this.param))
+      }
     }
     if (this.param == 'ent') {
-      this.service.entertainment().subscribe((data: News[]) => {
-        return this.analyze(data, 2)
-      })
+      if(this.checkStorage(this.param) == false) {
+        this.service.entertainment().subscribe((data: News[]) => {
+          return this.analyze(data, 2, true)
+        })
+      } else {
+        return this.news = JSON.parse(localStorage.getItem(this.param))
+      }
     }
-    if (this.param !== 'ent' && this.param !== 'ind' && this.param !== 'tech' && this.param !== 'spo' && this.param !== 'heal' && this.param !== 'sci'){
+    if (
+    this.param !== 'ent' && 
+    this.param !== 'ind' && 
+    this.param !== 'tech' && 
+    this.param !== 'spo' && 
+    this.param !== 'heal' && 
+    this.param !== 'sci'
+    ){
       return this.service.search(this.param).subscribe(data => {
-        this.analyze(data, 1);
+        this.analyze(data, 1, false);
       })
     }
+    return
+  }
+  
+  checkStorage(key) {
+    if (localStorage.getItem(key)) return true;
+    else return false
   }
 
-
-  analyze(arr: News[], score: number) {
+  analyze(arr: News[], score: number, save?: boolean) {
     this.news = [];
     arr.map(item => {
       if (sentiment.analyze(item.title._text, options).score > score) {
@@ -80,6 +114,15 @@ export class NewsComponent implements OnInit {
       }
     })
     console.log(this.news)
+    if (save == true) {
+      return localStorage.setItem(this.param, JSON.stringify(this.news))
+    }
+  }
+
+  removeItem() {
+    this.news = null
+    localStorage.removeItem(this.param)
+    this.ngOnInit()
   }
 
 }
