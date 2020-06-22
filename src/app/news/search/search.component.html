@@ -1,1 +1,7 @@
-<p>search works!</p>
+<form class="field" [formGroup] = "form" id="search">
+    <div class="control text is-large">
+      <input formControlName="search" class="input has-text-success is-success" type="text" placeholder="Search">
+    </div>
+    <br>
+    <button (click)="submit()" class="button text is-medium is-dark heading has-text-success">Search</button>
+</form>

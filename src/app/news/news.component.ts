@@ -25,6 +25,7 @@ export class NewsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(sentiment.analyze('i am not bad'))
     this.route.params.subscribe((params: any) => {
       this.param = params['id']
     });

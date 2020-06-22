@@ -6,6 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { TopicsComponent } from './news/topics/topics.component';
 import { SearchComponent } from './news/search/search.component';
 import { NewsService } from './news/news.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { LoadingComponent } from './news/loading/loading.component';
 
 const routes: Routes = [
   { path: 'topics/:id', component: NewsComponent },
@@ -13,10 +15,11 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  declarations: [NewsComponent, TopicsComponent, SearchComponent],
+  declarations: [NewsComponent, TopicsComponent, SearchComponent, LoadingComponent],
   imports: [
     CommonModule,
     HttpClientModule,
+    ReactiveFormsModule,
     RouterModule.forChild(routes)
   ],
   providers: [NewsService]

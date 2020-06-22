@@ -8,6 +8,7 @@ export const WORDS = {
     'forbes': .5,
     'pandemic': -1,
     'elon': 3,
+    'diet': 2,
     'develop': 2,
     'developement': 2,
     'reopen': 1,
@@ -32,8 +33,18 @@ export const WORDS = {
     'analyse': 2,
     'analyze': 2,
     'fittness': 3,
-    'masturbation': -3,
+    'masturbation': -10,
+    'masturbating': -10,
+    'masturbate': -10,
+    'gay': -10,
     'sex': -5,
     'beheaded': -4,
-    'beebom': 3
+    'beebom': 3,
+    'cancer': -1,
+    'yoga': 2,
+    'exercise': 1,
+    'coronavirus': -1,
+    'cases': -1,
+    'distancing': 1,
+    'nightmare': -3
 }
