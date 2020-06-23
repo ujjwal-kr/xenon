@@ -1,7 +1,8 @@
 <main>
     <div class="title">NEWS</div>
     <div (click) = "removeItem()" class="button is-primary ">Refresh</div>
-    <div *ngIf="news" class="load">
+    <p><br></p>
+    <div *ngIf="!news" class="load">
         <div>
             <app-loading></app-loading>
         </div>
