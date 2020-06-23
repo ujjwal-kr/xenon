@@ -31,7 +31,7 @@ export class SearchComponent implements OnInit, OnDestroy {
 
   submit() {
     if(this.form.get('search').errors) {
-      console.log('err')
+      return 
     } else {
       return this.router.navigateByUrl('/news/topics/'+this.search)
     }

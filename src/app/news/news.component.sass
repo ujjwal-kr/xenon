@@ -1,3 +1,44 @@
-p
-    font-size: 1.2em
-    margin-top: 7px
+.load
+    width: 100%
+    overflow: hidden
+    text-align: center
+    app-loading
+          position: relative
+          left: 42%
+
+@media all and ( max-width:  550px)
+    .load
+        app-loading
+            left: 15%
+
+@media all and ( max-width:  400px)
+    .load
+        app-loading
+            left: 10%    
+
+@media all and ( max-width:  350px)
+    .load
+        app-loading
+            left: 7%                          
+
+
+section
+    width: 100%
+    article
+        width: 100%
+        box-shadow: 0 0 0 .21px gray
+        div
+            padding-left: 3%
+            padding-right: 3%
+            font-size: 2em
+            padding: 2%
+
+@media all and ( max-width:  550px)
+    section
+        article
+            div
+                padding-left: 5.1%
+                padding-right: 5.1%
+                font-size: 1.5em
+                padding: 3%
+                

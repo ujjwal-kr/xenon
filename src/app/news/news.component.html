@@ -1,17 +1,17 @@
 <main>
-    <div class="title">NEWS</div>
-    <div (click) = "removeItem()" class="button is-primary ">Refresh</div>
+    <div class="title heading">News</div>
+    <div style="text-align: center; width: 100%;">
+        <div (click) = "removeItem()" class="button is-dark is-medium heading has-text-success">Refresh</div>
+    </div>
     <p><br></p>
     <div *ngIf="!news" class="load">
-        <div>
             <app-loading></app-loading>
-        </div>
     </div>
-    <div *ngIf="news">
-        <p *ngFor="let item of news">
-            {{ item.title._text }}
-            <br>
-        </p>
-    </div>
-    <p></p>
+    <section *ngIf="news">
+        <article *ngFor="let item of news">
+            <div class="heading">
+                {{ item.title._text }}
+            </div>
+        </article>
+    </section>
 </main>

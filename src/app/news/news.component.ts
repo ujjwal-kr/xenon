@@ -113,7 +113,6 @@ export class NewsComponent implements OnInit {
         this.news.push(item)
       }
     })
-    console.log(this.news)
     if (save == true) {
       return localStorage.setItem(this.param, JSON.stringify(this.news))
     }
