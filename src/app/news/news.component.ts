@@ -124,4 +124,8 @@ export class NewsComponent implements OnInit {
     this.ngOnInit()
   }
 
+  visit(url) {
+    return window.open(url, '_self')
+  }
+
 }

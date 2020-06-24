@@ -1,5 +1,4 @@
-<main>
-    <div class="title heading">News</div>
+<main style="padding-top: 4em;">
     <div style="text-align: center; width: 100%;">
         <div (click) = "removeItem()" class="button is-dark is-medium heading has-text-success">Refresh</div>
     </div>
@@ -9,8 +8,21 @@
     </div>
     <section *ngIf="news">
         <article *ngFor="let item of news">
-            <div class="heading">
-                {{ item.title._text }}
+            <div class="heading news">
+                <p class="source text">{{ item.source._text }}</p>
+                <br>
+                <p class="title">{{ item.title._text }}</p>
+                <p>
+                    <br>
+                </p>
+                <div class="columns is-mobile">
+                    <div class="column text date">
+                      {{ item.pubDate._text }}
+                    </div>
+                    <div class="column is-one-third">
+                      <button (click)="visit(item.source._text)" class="button is-dark text">Read</button>
+                    </div>
+                </div>
             </div>
         </article>
     </section>
