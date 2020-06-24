@@ -1,8 +1,12 @@
 export interface News {
     title?: Title;
-    link?: string;
+    link?: Link;
     pubDate?: Pub_date;
     source: Source;
+}
+
+interface Link {
+    _text?: string;
 }
 
 interface Title {

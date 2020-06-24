@@ -125,7 +125,7 @@ export class NewsComponent implements OnInit {
   }
 
   visit(url) {
-    return window.open(url, '_self')
+    return window.open(url)
   }
 
 }
