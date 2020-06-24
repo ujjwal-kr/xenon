@@ -6,5 +6,5 @@ Visit the [Xenon App](https://xenon.now.sh)
 
 ## Veronica - Filtering Engine
 
-She is the main news filtering engine for the Xenon, powered by natural language processing and some superpowers ;) and the BRAIN of xenon
+She is the main news filtering engine for the Xenon, powered by natural language processing and some superpowers ;) and is the BRAIN of xenon
 
