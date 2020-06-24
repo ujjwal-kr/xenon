@@ -63,5 +63,7 @@ export const WORDS = {
     'tips': 1,
     'cbse': 3,
     'encounter': -2,
-    'mercy': -1
+    'mercy': -1,
+    'meme': 1,
+    'memes': 1
 }

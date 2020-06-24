@@ -4,12 +4,7 @@
     text-align: center
     app-loading
           position: relative
-          left: 42%
-
-@media all and ( max-width:  550px)
-    .load
-        app-loading
-            left: 15%
+          left: 42%       
 
 @media all and ( max-width:  400px)
     .load
@@ -19,8 +14,7 @@
 @media all and ( max-width:  350px)
     .load
         app-loading
-            left: 7%                          
-
+            left: 7%                              
 
 section
     width: 100%
@@ -31,12 +25,21 @@ section
             padding-left: 3%
             padding-right: 3%
             padding: 2%
+            .title
+                font-size: 3em
             .source
                 color: #e849bd
+                font-size: 1.35em
 .date
     color: white                
+    font-size: 1.35em
+.button
+    font-size: 1.35em
 
 @media all and ( max-width:  550px)
+    .load
+        app-loading
+            left: 15%
     section
         article
             .news
@@ -44,4 +47,11 @@ section
                 padding-right: 5.1%
                 // font-size: 1.5em
                 padding: 3%
-                
+                .title
+                    font-size: 2em
+                .source
+                    font-size: 1.2em
+    .date
+        font-size: 1.07em                    
+    .button
+        font-size: 1.12em     
