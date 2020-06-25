@@ -61,7 +61,7 @@ export const WORDS = {
     'distancing': 1,
     'nightmare': -3,
     'tips': 1,
-    'cbse': 3,
+    'cbse': 1,
     'encounter': -2,
     'mercy': -1,
     'meme': 1,

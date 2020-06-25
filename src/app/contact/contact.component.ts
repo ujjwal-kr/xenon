@@ -40,7 +40,7 @@ form: FormGroup;
   get message() { return this.form.get("message").value }
 
   send() {
-    if (!this.form.errors){
+    if (this.form.valid){
       const data = {
         name: this.name,
         message: this.message,

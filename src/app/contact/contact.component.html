@@ -14,14 +14,14 @@
     <br>
     <p class="text">
       If you want to just say me HI, or have some feedback, reviews or questions about this app or anything in general,
-      you can use th ntact form below to let me know that people actually use this app.
+      you can use the contact form below to let me know that people actually use this app.
     </p>
   </section>
 
   <section>
     <h1 class="heading">Contact Me</h1>
     <br>
-    <form class="field" [formGroup] = "form">
+    <form class="field" [formGroup] = "form" (onSubmit) = "send()">
         <br>
         <div class="control">
           <input formControlName = "name" class="input is-success has-text-success" type="text" placeholder="Your Name">
@@ -36,7 +36,7 @@
         </div>
         <br>
         <div class="has-text-centered">
-          <button (click)= "send()" class="button is-dark has-text-success is-medium">Send</button>
+          <button (click)="send()" class="button is-dark has-text-success is-medium">Send</button>
         </div>
     </form>
   </section>
