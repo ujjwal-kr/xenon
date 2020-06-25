@@ -21,18 +21,22 @@
   <section>
     <h1 class="heading">Contact Me</h1>
     <br>
-    <form class="field">
+    <form class="field" [formGroup] = "form">
         <br>
         <div class="control">
-          <input class="input is-success has-text-success" type="text" placeholder="Your Name">
+          <input formControlName = "name" class="input is-success has-text-success" type="text" placeholder="Your Name">
         </div>
         <br>
         <div class="control">
-          <input class="input is-success has-text-success" type="text" placeholder="Your Email - (to contact you back)">
+          <input formControlName = "email" class="input is-success has-text-success" type="text" placeholder="Your Email - (to contact you back)">
         </div>
         <br>
         <div class="control">
-          <textarea class="textarea is-success has-text-success" type="text" placeholder="Your Email - (to contact you back)"></textarea>
+          <textarea formControlName = "message" class="textarea is-success has-text-success" type="text" placeholder="Your message Here"></textarea>
+        </div>
+        <br>
+        <div>
+          <button (click)= "send()" class="button is-dark has-text-success is-medium">Send</button>
         </div>
     </form>
   </section>

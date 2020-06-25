@@ -5,6 +5,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { RouterModule, Routes } from '@angular/router';
 import { ContactComponent } from './contact/contact.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {path: '', component: StoryComponent},
@@ -27,6 +28,7 @@ const config = {
     CommonModule,
     AngularFireModule.initializeApp(config),
     AngularFirestoreModule,
+    ReactiveFormsModule,
     RouterModule.forChild(routes)
   ]
 })
