@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-story',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StoryComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private afs: AngularFirestore
+  ) { }
 
   ngOnInit(): void {
+    console.log("object")
+    this.afs.collection('stories').valueChanges().subscribe(data => {
+      console.log(data)
+    })
   }
 
 }
