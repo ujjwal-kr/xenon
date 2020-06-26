@@ -1,1 +1,23 @@
-<p>story works!</p>
+<main>
+    <section class="top">
+        <h1>Stories</h1>
+    </section>
+
+    <div *ngIf="stories">
+        <section *ngIf="stories">
+            <article *ngFor="let story of stories">
+                <div class="heading news">
+                    <p class="source text">ujjwal-kr</p>
+                    <br>
+                    <p class="title">{{ story.title }}</p>
+                    <p>
+                        <br>
+                    </p>
+                    <p>
+                        {{ story.description }}
+                    </p>
+                </div>
+            </article>
+        </section>
+    </div>
+</main>
