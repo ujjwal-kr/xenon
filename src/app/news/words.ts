@@ -12,9 +12,14 @@ export const WORDS = {
     'corona': -2,
     'coronavirus': -2,
     'positive': 0,
+    'immunity': 1,
     'verge': 2,
     'new': 1,
     'techcrunch': 2,
+    'confinement': -1.5,
+    'spread': -.5,
+    'hotspot': -1,
+    'hotspots': -.5,
     'informationweek': 1,
     'forbes': .5,
     'pandemic': -1,
@@ -65,5 +70,9 @@ export const WORDS = {
     'encounter': -2,
     'mercy': -1,
     'meme': 1,
-    'memes': 1
+    'memes': 1,
+    'rise': 0,
+    'rises': 0,
+    'disease': -1,
+    'diseases': -1
 }
