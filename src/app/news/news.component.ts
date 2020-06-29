@@ -62,7 +62,7 @@ export class NewsComponent implements OnInit {
     if (this.param == 'heal') {
       if(this.checkStorage(this.param) == false) {
         this.service.health().subscribe((data: News[]) => {
-          return this.analyze(data, 0, true)  
+          return this.analyze(data, 0, true)
         })
       } else {
         return this.news = JSON.parse(localStorage.getItem(this.param))
