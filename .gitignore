@@ -48,4 +48,4 @@ Thumbs.db
 .vercel
 
 # WORDS TS
-/src/app/news/words.ts
+# /src/app/news/words.ts
