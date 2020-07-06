@@ -35,7 +35,7 @@ export class NewsComponent implements OnInit {
     if (this.param == 'tech') {
         if(this.checkStorage(this.param) == false) {
           this.service.tech().subscribe((data: News[]) => {
-            return this.analyze(data, -1, true)
+            return this.analyze(data, 2, true)
           })
         } else {
           return this.news = JSON.parse(localStorage.getItem(this.param))
@@ -53,7 +53,7 @@ export class NewsComponent implements OnInit {
     if (this.param == 'sci') {
       if(this.checkStorage(this.param) == false) {
         this.service.science().subscribe((data: News[]) => {
-          return this.analyze(data, -3, true)
+          return this.analyze(data, 0, true)
         })
       } else {
         return this.news = JSON.parse(localStorage.getItem(this.param))
@@ -71,7 +71,7 @@ export class NewsComponent implements OnInit {
     if (this.param == 'spo') {
       if(this.checkStorage(this.param) == false) {
         this.service.sports().subscribe((data: News[]) => {
-          return this.analyze(data, 0, true)
+          return this.analyze(data, 1, true)
         })
       } else {
         return this.news = JSON.parse(localStorage.getItem(this.param))

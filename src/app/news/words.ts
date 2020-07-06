@@ -75,5 +75,6 @@ export const WORDS = {
     'rises': 0,
     'disease': -1,
     'diseases': -1,
-    'killed': -3
+    'killer': -3,
+    'heartbreak': -6
 }
