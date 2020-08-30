@@ -2,5 +2,5 @@
 
 Visit the [Xenon App](https://xenon.now.sh)
 
-`clone info: put BLMA sass files in scr/'
+### The xenon API source is located [here](https://github.com/ujjwal-kr/gnews-sc)
 
