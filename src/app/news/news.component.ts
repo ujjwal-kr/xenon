@@ -38,7 +38,7 @@ export class NewsComponent implements OnInit {
             return this.analyze(data, 2, true)
           })
         } else {
-          return this.news = JSON.parse(localStorage.getItem(this.param))
+          return this.news = JSON.parse(sessionStorage.getItem(this.param))
         }
     }
     if (this.param == 'ind') {
@@ -47,7 +47,7 @@ export class NewsComponent implements OnInit {
           return this.analyze(data, 1, true)
         })
       } else {
-        return this.news = JSON.parse(localStorage.getItem(this.param))
+        return this.news = JSON.parse(sessionStorage.getItem(this.param))
       }
     }
     if (this.param == 'sci') {
@@ -56,7 +56,7 @@ export class NewsComponent implements OnInit {
           return this.analyze(data, 0, true)
         })
       } else {
-        return this.news = JSON.parse(localStorage.getItem(this.param))
+        return this.news = JSON.parse(sessionStorage.getItem(this.param))
       }
     }
     if (this.param == 'heal') {
@@ -65,7 +65,7 @@ export class NewsComponent implements OnInit {
           return this.analyze(data, 0, true)
         })
       } else {
-        return this.news = JSON.parse(localStorage.getItem(this.param))
+        return this.news = JSON.parse(sessionStorage.getItem(this.param))
       }
     }
     if (this.param == 'spo') {
@@ -74,7 +74,7 @@ export class NewsComponent implements OnInit {
           return this.analyze(data, 1, true)
         })
       } else {
-        return this.news = JSON.parse(localStorage.getItem(this.param))
+        return this.news = JSON.parse(sessionStorage.getItem(this.param))
       }
     }
     if (this.param == 'ent') {
@@ -83,7 +83,7 @@ export class NewsComponent implements OnInit {
           return this.analyze(data, 2, true)
         })
       } else {
-        return this.news = JSON.parse(localStorage.getItem(this.param))
+        return this.news = JSON.parse(sessionStorage.getItem(this.param))
       }
     }
     if (
@@ -102,7 +102,7 @@ export class NewsComponent implements OnInit {
   }
   
   checkStorage(key) {
-    if (localStorage.getItem(key)) return true;
+    if (sessionStorage.getItem(key)) return true;
     else return false
   }
 
@@ -114,13 +114,13 @@ export class NewsComponent implements OnInit {
       }
     })
     if (save == true) {
-      return localStorage.setItem(this.param, JSON.stringify(this.news))
+      return sessionStorage.setItem(this.param, JSON.stringify(this.news))
     }
   }
 
   removeItem() {
     this.news = null
-    localStorage.removeItem(this.param)
+    sessionStorage.removeItem(this.param)
     this.ngOnInit()
   }
 
